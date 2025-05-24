@@ -24,8 +24,8 @@ const Banner = () => {
         viewport={{ once: false, amount: 0 }}
         className="absolute top-30 right-85 -z-1 text-lg"
       >
-        <p> Please allow me to use this picture.</p>
-        <p>i dont known who's owner picture.</p>
+        <p>Please allow me to use this picture.</p>
+        <p>i dont known whos owner picture.</p>
       </motion.div>
       <GradualSpacing text="Hi I am New Dev." />
       <motion.p
