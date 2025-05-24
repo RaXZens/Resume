@@ -12,20 +12,10 @@ const Banner = () => {
         variants={fadeIn("right", 0.25)}
         initial={"hidden"}
         whileInView={"show"}
-        className="absolute top-40 right-80 -z-1"
+        className="absolute top-40 right-100 -z-1"
         viewport={{ once: false, amount: 0 }}
       >
-        <Image src={"/cat1.webp"} alt="" width={300} height={300} />
-      </motion.div>
-      <motion.div
-        variants={fadeIn("down", 0.25)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0 }}
-        className="absolute top-30 right-85 -z-1 text-lg"
-      >
-        <p>Please allow me to use this picture.</p>
-        <p>i dont known whos owner picture.</p>
+        <Image src={"/cat1.png"} alt="" width={300} height={300} />
       </motion.div>
       <GradualSpacing text="Hi I am New Dev." />
       <motion.p
