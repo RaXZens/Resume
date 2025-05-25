@@ -69,7 +69,7 @@ const BannerSkills = () => {
             {SkillText.map((item) => (
               <CarouselItem
                 key={item.title}
-                className="md:basis-1/2 lg:basis-1/3 pt-6 py-7 max-md:px-7  xl:px-4"
+                className="md:basis-1/2 lg:basis-1/3 pt-6 py-7 max-md:px-7  xl:px-4 max-sm:ps-3 max-sm:pe-0 "
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
