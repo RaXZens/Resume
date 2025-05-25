@@ -1,5 +1,5 @@
 import React from "react";
-import BannerProjects from "@/components/ui/BannerProjects";
+import BannerProjects from "@/components/BannnerService/BannerProjects";
 
 const Project = () => {
   return (

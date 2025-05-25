@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/Providers/ThemeProviders";
 import { cookies } from "next/headers";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Appsidebar from "@/components/ui/Appsidebar";
+import Footer from "@/components/ui/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default async function RootLayout({
           <main className="w-full">
             <Navbar />
             <div className="px-4">{children}</div>
+            <Footer/>
           </main>
           </SidebarProvider>
         </ThemeProvider>

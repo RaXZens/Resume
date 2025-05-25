@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import fadeIn from "./variant";
+import fadeIn from "../ui/variant";
 import Image from "next/image";
 import { GradualSpacing } from "@/components/ui/gradual.spacing";
 

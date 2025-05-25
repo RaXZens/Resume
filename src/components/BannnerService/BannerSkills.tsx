@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { motion } from 'framer-motion';
-import fadeIn from "./variant";
+import fadeIn from "../ui/variant";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -79,7 +79,7 @@ const BannerSkills = () => {
                   className="p-1 "
                 >
                   <Card>
-                    <CardContent className="aspect-square items-center justify-center p-6">
+                    <CardContent className="items-center justify-center p-6">
                       <div className="flex justify-center mt-10 ">
                         <Image
                           alt=""

@@ -1,5 +1,5 @@
 import React from "react";
-import BannerSkills from "@/components/ui/BannerSkills";
+import BannerSkills from "@/components/BannnerService/BannerSkills";
 
 const Skills = () => {
   return (

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { motion, useInView } from "framer-motion";
-import fadeIn from "./variant";
+import fadeIn from "../ui/variant";
 import Image from 'next/image';
 
 
