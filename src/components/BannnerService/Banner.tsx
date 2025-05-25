@@ -7,24 +7,24 @@ import { GradualSpacing } from "@/components/ui/gradual.spacing";
 
 const Banner = () => {
   return (
-    <div className="ms-20  mt-30">
+    <div className="ms-20  mt-30 max-sm:ms-15 max-sm:mt-2">
       <motion.div
         variants={fadeIn("right", 0.25)}
         initial={"hidden"}
         whileInView={"show"}
-        className="absolute top-40 right-100 -z-1"
+        className="absolute top-40 right-100 -z-1 max-sm:right-10 max-sm:top-70"
         viewport={{ once: false, amount: 0 }}
       >
         <Image src={"/cat1.png"} alt="" width={300} height={300} />
       </motion.div>
-      <GradualSpacing text="Hi I am New Dev." />
+      <div className="max-sm:mt-0 ">
+    <GradualSpacing text="Hi I am New Dev." />
       <motion.p
         variants={fadeIn("right", 0.25)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0 }}
-        className="text-light pt-2 text-lg"
-      >
+        className="text-light pt-2 text-lg">
         I know WP Theme developer.
       </motion.p>
       <div className="mt-9">
@@ -34,6 +34,7 @@ const Banner = () => {
         <button className="hover:bg-lime-800 cursor-pointer py-3 px-7 rounded-2 bg-lime-600 ">
           Show Work
         </button>
+      </div>
       </div>
     </div>
   );

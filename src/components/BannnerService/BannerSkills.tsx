@@ -53,7 +53,7 @@ const BannerSkills = () => {
         <p className="text-sm font-light mt-3">What I could Do?</p>
       </motion.div>
       <motion.div
-        variants={fadeIn("left", 0.3)}
+        variants={fadeIn("up", 0.3)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0 }}
