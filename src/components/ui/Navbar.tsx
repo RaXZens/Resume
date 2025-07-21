@@ -3,16 +3,13 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import Link from "next/link";
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import { useTheme } from "next-themes";
 import { Button } from "./button";
 import { SidebarTrigger } from "./sidebar";
-import { House } from "lucide-react";
+import { Home, House, Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { usePathname } from "next/navigation";
 
 const NavLinks = [
   {
@@ -23,20 +20,16 @@ const NavLinks = [
     name: "Project",
     path: "/ProJectwork",
   },
-  {
-    name: "About",
-    path: "/About",
-  },
 ];
-
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme(); // ใช้ useTheme เพื่อดึงค่า theme และฟังก์ชัน setTheme
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
   // ใช้เพื่อหลีกเลี่ยงการ render ก่อนที่ useTheme จะทำงาน
   useEffect(() => {
     setMounted(true);
-  }, []);
+  }, [pathname]);
   if (!mounted) {
     // เมื่อยังไม่ได้ mount ก็ให้ render ค่า theme ออกมาให้เหมาะสม
     return null;
@@ -57,21 +50,25 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="fixed bottom-10 right-8" id="HidebacktoTop">
+      <div
+        className="fixed bottom-12 right-8 max-sm:bottom-20"
+        id="HidebacktoTop"
+      >
         <motion.button
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.8 }}
           onClick={handleClick}
-          className="border border-neutral-900 p-1 cursor-pointer hover:bg-gray-100 rounded-md"
+          className="border border-neutral-900 p-1 cursor-pointer hover:bg-card rounded-md"
         >
           <House />
         </motion.button>
       </div>
       <div className="h-full  flex justify-between items-center mx-auto p-8">
-        <div className="font-bold text-4xl">
+        <div className="flex">
           <SidebarTrigger className="md:hidden" />
-          <Link href={"/"} className="ps-3">
-            Logo
+          <Link href={"/"} className="">
+            <Home />
+            
           </Link>
         </div>
         <div className="flex  xl:block max-md:hidden">
@@ -81,15 +78,11 @@ const Navbar = () => {
             </Button>
           ))}
         </div>
-        <div className="flex text-end gap-3">
-          <Avatar>
-            <AvatarImage src="globe.svg" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <div className="pe-0 pt-1.5">
+        <div className="flex items-center text-end gap-3">
+          <div className="pt-1">
             <Switch onClick={toggleTheme}></Switch>
           </div>
-          <Label htmlFor="Dark Mode">Dark Mode</Label>
+          {theme === "light" ? <Sun /> : <Moon />}
         </div>
       </div>
     </nav>

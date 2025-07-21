@@ -20,10 +20,6 @@ const items = [
     name: "Project",
     path: "/ProJectwork",
   },
-  {
-    name: "About",
-    path: "/About",
-  },
 ];
 
 

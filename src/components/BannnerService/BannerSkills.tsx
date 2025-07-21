@@ -1,109 +1,87 @@
-'use client'
+"use client";
 import React from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import fadeIn from "../ui/variant";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 
 const SkillText = [
   {
-    Logo: "/",
-    title: "Ux/Ui Design",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    titleheader:"Technical Skills",
+    title1: "ProgrammingLanguages :",
+    title2: "FrameworksLibraries :",
+    title3: "Databases ",
+    title4: "versionControl :",
+    title5: "APIs : ",
+    description1: " JavaScript, TypeScript , Php",
+    description2: " react, Next.js, Node.js",
+    description3: " MySQL",
+    description4: " Git,GitHub ",
+    description5: " RESTful APIs",
   },
   {
-    Logo: "/",
-    title: "BackEnd Developer",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  },
-  {
-    Logo: "/",
-    title: "Manager System",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-  },
-  {
-    Logo: "/",
-    title: "DataAnalys",
-    description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+    titleheader:"Soft Skills",
+    title1: "Adaptability : ",
+    title2: "Communication : ",
+    description1: "Adaptability to change, Learning agility",
+    description2: "Effective communication, Active listening",
+
   },
 ];
 
-const BannerSkills = () => {
+
+
+const BannerSkills= () => {
   return (
-    <div className="">
+    <div className="mt-5">
       <motion.div
         variants={fadeIn("up", 0.25)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0 }}
-        className="text-center mt-20 "
+        className="text-center "
       >
         <h1 className=" text-3xl">Skiils</h1>
-        <p className="text-sm font-light mt-3">What I could Do?</p>
       </motion.div>
-      <motion.div
-        variants={fadeIn("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0 }}
-        className=""
-      >
-        <Carousel
-          opts={{
-            align: "center",
-          }}
-          className="w-full mt-10 "
-        >
-          <CarouselContent>
-            {SkillText.map((item) => (
-              <CarouselItem
-                key={item.title}
-                className="md:basis-1/2 lg:basis-1/3 pt-6 py-7 max-md:px-7  xl:px-4 max-sm:ps-3 max-sm:pe-0 "
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="p-1 "
-                >
-                  <Card>
-                    <CardContent className="items-center justify-center p-6">
-                      <div className="flex justify-center mt-10 ">
-                        <Image
-                          alt=""
-                          width={50}
-                          height={0}
-                          src={item.Logo}
-                        ></Image>
-                      </div>
-                      <h1 className="text-3xl text-center mt-3">
-                        {item.title}
-                      </h1>
-                      <p className="text-sm font-light mt-3 pb-10">
-                        {item.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </motion.div>
+      <div className="grid grid-cols-2 gap-15 mt-15 max-lg:grid-cols-1">
+        {SkillText.map((item, index) => (
+          <motion.div
+            variants={fadeIn("down", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0 }}
+            key={index}
+          >
+            <Card className="h-full">
+              <CardContent >
+                <h1 className="text-2xl font-bold text-center">
+                  {item.titleheader}
+                </h1>
+                <h1 className="text-lg mt-3 ">
+                  {item.title1}
+                  <a className="font-light">{item.description1}</a>
+                </h1>
+                <h1 className="text-lg mt-1">
+                  {item.title2}
+                  <a className="font-light">{item.description2}</a>
+                </h1>
+                <h1 className="text-lg mt-1">
+                  {item.title3}
+                  <a className="font-light">{item.description3}</a>
+                </h1>
+                <h1 className="text-lg mt-1">
+                  {item.title4}
+                  <a className="font-light">{item.description4}</a>
+                </h1>
+                <h1 className="text-lg mt-1">
+                  {item.title5}
+                  <a className="font-light">{item.description5}</a>
+                </h1>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 };

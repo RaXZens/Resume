@@ -2,63 +2,83 @@
 import React from "react";
 import { motion } from "framer-motion";
 import fadeIn from "../ui/variant";
-import { Card,  CardDescription, CardHeader } from "../ui/card";
+import { Card, CardHeader } from "../ui/card";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 const ProjectsText = [
   {
-    title: "PHP(pure)",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    image:"/Project.png",
+    title: "LearningCourse",
+    description: " (http:) This project is only registercourse and show result your registered learning course. You can update,delete about information. The history would show your information and status.",
+    Technical: "PHP(pure),mysql,git",
+    Git:"https://github.com/RaXZens/Learning-Course",
+    patch:"http://202.29.50.41/s6513805230/project/index.php",
+    username:"dev"
+
   },
   {
+    image:"/dashboard.png",
     title: "DashBoard",
     description:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,",
-  },
-  {
-    title: "Ecommerce",
-    description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat",
+      "This project would show dashboard about employees information for example totals employees,totals salaries. You can manage employees's information in crudid page at left sidebar. If you want to sort data, there's sort by (department,salary) button. After you add or delete that can update to dashboard's piechart and barchart only. In another chart would't connection to database. You can manage account profile what ever name,email,password in account setting.",
+    Technical: "react,nextjs,ts,shadcn ui,mysql,git",
+    Git:"https://github.com/RaXZens/Dashboard-practice",
+    patch:"https://dashboard-practice-hazel.vercel.app/dashboard",
+    username:"dev@gmail.com"
   },
 ];
 
 const BannerProjects = () => {
   return (
-    <div className="mt-10 ">
-      <div className="text-center">
+    <div className="mt-5">
+      <div className="">
         <motion.div
           variants={fadeIn("up", 0.25)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0 }}
-          className="text-center mt-20 "
+          className="text-center "
         >
           <h1 className="text-3xl">Projects</h1>
-          <p className="text-sm font-light mt-3">My Projects have done</p>
         </motion.div>
-        <div className="mt-10 flex gap-3 max-lg:flex-col ">
+        <div className="mt-15 grid grid-cols-2 gap-3 max-lg:grid-cols-1">
           {ProjectsText.map((item) => (
-            <motion.div 
-            key={item.title}
-            variants={fadeIn("up",0.25)}
-            whileInView={'show'}
-            initial="hidden"
-            viewport={{ once:false, amount:0}}
-
-            className="">
-            <Card  className="pt-0  gap-2">
-              <Image src={'/Project.png'}
-              alt=""
-              width={540}
-              height={200}
-              className="rounded-t-lg w-full h-70"/>
-              <CardHeader className="text-3xl ">{item.title}</CardHeader>
-              <CardDescription className="text-sm font-light  px-2 text-pretty ">{item.description}</CardDescription>
-            </Card>
+            <motion.div
+              key={item.title}
+              variants={fadeIn("up", 0.25)}
+              whileInView={"show"}
+              initial="hidden"
+              viewport={{ once: false, amount: 0 }}
+              className=""
+            >
+              <Card className="pt-0  gap-2 h-full">
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={540}
+                  height={200}
+                  className="rounded-t-lg w-full h-70"
+                />
+                <CardHeader className="text-2xl text-center">
+                  {item.title}
+                </CardHeader>
+                <div className="text-md font-bold px-4 ">
+                  Attention :<a className="font-light">{item.description}</a>
+                  <br />
+                  Technical : <a className="font-light">{item.Technical}</a><br/>
+                  User(if you dont want to create new account) : <a className="font-light">Username : {item.username} Password : dev</a>
+                </div>
+                <div className="flex gap-2 px-3 ">
+                  <Link href={item.Git} target='_blank'>
+                  <Button variant={'outline'}><Image src={"/github-mark.svg"} alt="" width={20} height={20}/>Github</Button></Link>
+                  <Link href={item.patch} target='_blank'>
+                  <Button className="bg-green-500 hover:bg-green-600">Open</Button></Link>
+                </div>
+              </Card>
             </motion.div>
           ))}
-          
         </div>
       </div>
     </div>
