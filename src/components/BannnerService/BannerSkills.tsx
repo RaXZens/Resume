@@ -46,7 +46,7 @@ const BannerSkills= () => {
       <div className="grid grid-cols-2 gap-15 mt-15 max-lg:grid-cols-1">
         {SkillText.map((item, index) => (
           <motion.div
-            variants={fadeIn("down", 0.3)}
+            variants={fadeIn("up", 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0 }}
