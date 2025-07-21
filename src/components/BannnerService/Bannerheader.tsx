@@ -42,7 +42,7 @@ const Banner = () => {
           viewport={{ once: false, amount: 0 }}
           className="text-light pt-2 text-xl"
         >
-          Email : leekung12341@gmail.com <br />
+          Email : api.somsamai@gmail.com <br />
           Tel : 0962436132
         </motion.p>
         <motion.div
