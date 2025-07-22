@@ -13,7 +13,7 @@ const SkillText = [
     title3: "Databases ",
     title4: "versionControl :",
     title5: "APIs : ",
-    description1: " JavaScript, TypeScript , Php",
+    description1: " HTML, CSS, JavaScript, TypeScript, Php",
     description2: " react, Next.js, Node.js",
     description3: " MySQL",
     description4: " Git,GitHub ",
